@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <script>
+        /*  alert("alert");
+            prompt("prompt");
+            confirm("confirm box");
+        */
+            //objects
+/*          let obj = {
+            fname : "Minaxi S. Machhi",
+           }
+            console.log(obj.fname);
+            
+            obj.workplace = 'bacancy';
+            console.log(obj.workplace);
+            delete obj.workplace; 
+            console.log(obj.hasOwnProperty('workplace'));
+            console.log(obj.workplace); //undefined
+ */
+            //default values
+ /*            function add(a=2,b=3)
+            {
+                let c=a+b;
+                console.log(c);
+                
+            }
+            add();
+ */
+ /*            function add(a,b)
+            {
+                console.log(a,b);//value of b is undefined
+                
+            }
+            add(2);
+  */
+/*             let name="Minaxi";
+            myfun(name);
+            function myfun(name)
+            {
+                console.log(name);
+            } */
+            //return
+/*             let ret=myfun(3,2);
+            console.log(ret);
+            function myfun(a,b)
+            {
+                if(a>b)
+                return "a is greter";
+            }  */
+            /* function myfn(obj)
+            {
+                obj.name='Mins';
+            }
+            let obj = {name:'Min',workplace:'bacancy'};
+            console.log("before:"+obj.name);//Min 
+            myfn(obj);
+            console.log("after:" +obj.name);//Mins
+ */
+            //expression fn
+            /* let myfn=function(){
+                console.log("hello");
+            }
+            myfn();
+ */
+/*         function sum(){
+                let sum = 0 ;
+                var inputArray = [];
+                var size = 20; //Max Array size
+                for(var i=0; i<size; i++) {
+                    //Taking Input from user
+                    inputArray[i] =+ prompt('Enter Element ' + (i+1));
+                    if (!inputArray[i]) break; 
+                }
+                sum = inputArray.reduce((total ,amount)=> total + amount,0);
+                alert("sum : " + sum);
+            }
+    
+            sum(); */
+            
+/*             let fn= function(number){ 
+                console.log(number*number);
+            }
+            fn(3);
+ */
+        
+        </script>
+    </head>
+    <body>
+ <!--      <button id="btn" onclick="clickFn() ">Click Here</button>
+      <script>
+       function clickFn(){
+                document.getElementById("btn").innerHTML="Hello";
+            }
+      </script>  
+      <h3 id="js">Javascript</h3>
+        <script>
+           document.getElementById("js").onclick = function(){
+                myFunction();
+            };
+            function myFunction(){
+                document.getElementById("js").innerHTML="Vue";
+            }
+        </script>
+  -->       
+
+        <button id="btn" onclick="myFunction()">Click Here</button>
+        <script>
+            let myFunction = function(){
+                console.log("hello");
+                let btnid=document.getElementById("btn");
+                btnid.style.color="red";
+            } 
+        </script>
+ 
+    </body>
+</html>
