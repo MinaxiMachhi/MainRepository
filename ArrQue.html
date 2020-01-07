@@ -267,14 +267,16 @@ const users = [
     }
     console.log(getUserById(3));
 
-    /* for(let val in obj) {
-            console.log(val + "=" + obj[val]);
-    } */
-
     for(let i=0;i<obj.length;i++){
-      console.log("name:" +users[i].name)
+      console.log("name:" +users[i].name)// display all users Name
     }
-    
-        </script>
+        
+      console.log(username());//find username == bret
+     
+       function username(name = "Bret"){
+          return users.find((username) =>username.username == name);
+       }
+        
+     </script>
     </head>
 </html>
