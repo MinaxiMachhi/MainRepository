@@ -1,17 +1,35 @@
 <template>
-    <div>
-        {{reversemsg}}<br>
-        {{reversemsg}}<br>
-        {{reversemsg}}<br>
+    <div>computed:<br><br>
 
-        {{now}}
+        {{reversemsg}}<br>
+        {{reversemsg}}<br>
+        {{reversemsg}}<br>
+        
+        {{now}}<br>
+        {{getName}}
+        
+        <br>
+        <label>Find</label>
+        <input type="text" v-model="findname"><br>
+        <li v-for="names in filterNames" :key="names">
+        {{names}}
+        </li>
     </div>
 </template>
 <script>
 export default {
     data() {
         return {
-        name: "Minaxi Machhi"
+            findname:'',
+            names:[
+                'minaxi',
+                'nency',
+                'sagar',
+                'khushbu',
+                'riya',
+            ],
+            name: "Minaxi Machhi"
+            
         };
     },
     computed: {
@@ -25,6 +43,20 @@ export default {
 
         now: function() {
         return Date.now();
+        },
+
+        filterNames: function(){
+            let filterr = new RegExp(this.findname,'i')
+            return this.names.filter(el => el.match(filterr))
+        },
+
+        getName: {
+            set: function(newValue){
+                this.name="minaxi";
+            },
+            get: function(){
+                return this.name
+            }
         }
     }
 };
