@@ -1,13 +1,12 @@
 <template>
 <div id>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
   </head>
-  <form>` `
+  <form>
     <h4>REGISTRATION FORM</h4>
     <p class="err-msg" v-if="errors.length">!please fill the details</p>
     
@@ -50,9 +49,9 @@
     <div class="checkbox">
       <label for="chkbox" class="chk-label">Technology:</label> 
       <label class="chk-option">Vue</label>
-      <input v-model="tech" type="checkbox" value="Vue" class="chk-input" name="Vue">
+      <input v-model="selected" :options="options"  type="checkbox" value="Vue" class="chk-input" name="Vue">
       <label class="chk-option">React</label>
-      <input v-model="tech" type="checkbox" value="React" class="chk-input" name="React">
+      <input v-model="selected" type="checkbox" value="React" class="chk-input" name="React">
     </div>
 
     <label></label>
@@ -70,7 +69,7 @@
       <p>Phone No:{{ data.phoneno }}</p>
       <p>Password:{{ data.password }}</p>
       <p>Gender:{{ data.gender }}</p>
-        <p>Technology:{{ data.tech }}</p>
+        <p>Technology:{{ selected }}</p>
     </div>
   </form>
 </div>
@@ -90,6 +89,7 @@ export default {
       issubmitted: false,
       isDisabled: false,
       hasError: true,
+      selected:[],
       data: {
         firstname: null,
         lastname: null,
@@ -97,6 +97,7 @@ export default {
         phoneno: null,
         password: null,
         gender:null,
+        selected:null,
       }
     };
   },
@@ -148,7 +149,7 @@ export default {
           phoneno: this.phoneno,
           password: this.password,
           gender: this.gender,
-          tech:this.tech,
+          selected:this.selected,
         };
       } else {
         //
